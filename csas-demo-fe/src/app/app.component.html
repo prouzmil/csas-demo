@@ -1,0 +1,6 @@
+<pagination [pagination]="pagination$ | async">
+  <div class="branchesList" [class.loading]="loading$ | async">
+    <branches-list [branches]="(branches$ | async)"></branches-list>
+  </div>
+</pagination>
+

@@ -1,0 +1,19 @@
+<ul>
+  <ng-container *ngIf="showFirstPage">
+    <li><a (click)="selectPage(1)">1</a></li>
+    <li>...</li>
+  </ng-container>
+
+  <ng-container *ngFor="let page of pages">
+    <li *ngIf="page == pagination.pageNumber" class="current">{{page}}</li>
+    <li *ngIf="page != pagination.pageNumber">
+      <a (click)="selectPage(page)">{{page}}</a>
+    </li>
+  </ng-container>
+
+  <ng-container *ngIf="showLastPage">
+    <li>...</li>
+    <li><a *ngIf="showLastPage" (click)="selectPage(pagination.pageCount)">{{pagination.pageCount}}</a></li>
+  </ng-container>
+
+</ul>

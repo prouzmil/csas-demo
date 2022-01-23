@@ -1,0 +1,18 @@
+<table class="branchesListTable">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>pobočka</th>
+      <th>nejbližší očkovací centrum</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let branch of branches">
+      <td>{{branch.id}}</td>
+      <td><b>{{branch.name}}</b><br/>{{branch.address}}</td>
+      <td><b>{{branch.nearestVaccinationPlace.name}}</b><br/>{{branch.nearestVaccinationPlace.address}}</td>
+      <td><a href="{{getGoogleMapLink(branch)}}" target="_blank">odkaz na trasu</a></td>
+    </tr>
+  </tbody>
+</table>
